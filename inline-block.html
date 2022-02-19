@@ -3,34 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <style>
-            a{
-                text-decoration: none;
-                padding:0px 10px;
-                height:20px;
-                border:1px solid #ccc;
-                font:14px/20px "@宋体";
-                color: blue;
-            }
-            a:hover, .default{
-                background:blue;
-                color: white;
-                
-            }
-            
+           div{
+               display:inline-block;
+           }
+           ul{
+               list-style: none;
+               display: flex;
+           }
+           ul li{
+               padding: 0px 5px;
+               border: 2px solid red;
+               margin: 0px 3px;
+           }
+           span{
+               display: block;
+               padding:5px 10px;
+               border:1px solid #ccc;
+               margin:3px;
+           }
         </style>
     </head>
-
+ 
     <body>
         <div>
-            <a href="">上一页</a>
-            <a href="" class="default">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-            <a href="">4</a>
-            <a href="">5</a>
-            <a href="">6</a>
-            <a href="">7</a>
-            <a href="">下一页</a>
+            <ul>
+                <li>1</li>
+                <li>22</li>
+                <li>333</li>
+                <li>4444</li>
+            </ul>
+        </div>
+        <div>
+            <span>4</span>
+            <span>33</span>
+            <span>222</span>
+            <span>1111</span>
         </div>
     </body>
 
