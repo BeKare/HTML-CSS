@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,body{
+            padding: 0px;
+        }
+        .list{
+            list-style: none;
+            display: flex;
+        }
+        .list li{
+            width: 150px;
+            border-right: 1px solid black;
+            padding: 0 0px 0 10px;
+        }
+        .list li:last-child{
+            border-right: none;
+        }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            width: 40px;
+            margin: 0 3px;
+            text-align: center;
+            
+        }
+        .list li a:nth-of-type(3n+1) {
+            font-weight: bold;
+        }
+        .list li:nth-of-type(2) a:nth-of-type(2){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+            <a href="">a</a>
+        </li>
+        <li>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+            <a href="">b</a>
+        </li>
+        <li>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+            <a href="">c</a>
+        </li>
+    </ul>
+</body>
+</html>
