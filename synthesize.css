@@ -1,0 +1,61 @@
+body{
+    margin: 0px;
+}
+ul{
+    list-style: none;
+    margin:0px;
+    display: flex;
+}
+.header-list{
+  list-style: none;
+  margin:0px;
+  display: flex;
+  line-height: 20px;  
+}
+.header-list li{
+    padding: 0 14px;
+    border-right: 1px solid #ccc;
+    
+}
+.header-list li:nth-of-type(2) a:nth-of-type(2){
+    color: red;
+    padding: 0px 0 0 6px;
+}
+.header-list li:nth-of-type(6) a:nth-of-type(1){
+    color: red;
+}
+.header-list li:nth-of-type(2){
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.header-list li:first-of-type{
+    padding: 0px 150px 0px 30px;
+    border-right: none;
+}
+.header-list li:last-of-type{
+    border-right:none;
+    padding: 0 0 0 10px;
+}
+/*头部的样式以及头部div的样式*/
+header{
+    width: auto;
+    background: #e3e4e5;
+    font-size: 12px;
+}
+header div{
+    margin: 0px 0px 0px 75px;
+    padding: 5px 0px;
+    
+}
+.header-list a{
+    text-decoration: none;
+    color: #999;
+}
+.header a:hover{
+    color: red;
+}
+a{
+    text-decoration: none;
+}

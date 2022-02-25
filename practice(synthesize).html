@@ -4,83 +4,59 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="synthesize.css" rel="stylesheet"/>
         <title>Document</title>
         <style>
-            body{
-                margin: 0px;
-                
-            }
-            
-            /*头部的样式以及头部div的样式*/
-            header{
-                width: auto;
-                height: 31px;
-                background: #e3e4e5;
-                font-weight: 100;
-                font-size: 12px;
-            }
-            .header{
-                margin: 0px 136px;
-                padding: 4px 0px 0px;
-            }
-            .span1{
-                padding-right: 150px;
-                padding-left: 10px;
-            }
-            .span2{
-                border-right: 1px solid #ccc;
-                display: inline-block;
-                text-align: center;
-            }
             nav{
                 width:990px;
                 height:140px;
                 font-weight: 100;
                 font-size: 12px;
+                margin: 28px 316px;
             }
-            .nav{
-                margin: 0px 136px;
-            }
-            /*头部的ul样式*/
-            a{
-                text-decoration: none;
+            .nav input{
+                width: 430px;
+                height: 30px;
+                margin: -2px -2px 0 0;
+                border: 2px solid #e1251b;
                 
             }
-            a:hover{
-                color: red;
+            .nav_list li:nth-of-type(2){
+                margin-top: -2px;
+                padding: 8px 19px;
+                background-color: #e1251b;
+                border: 2px solid #e1251b;
             }
-            .textarea{
-                width:430px;
-                height: 32px;
-                border: 2px solid red;
-                resize: none;
-                
-            }
-            
-            .a{
-               
-                color: red;
+            .nav_list li a{
+                color: white;
             }
         </style>
     </head>
     <body>
         <header>
             <div class="header">
-                <span class="span1" onmousemove=""><a href=""><img src="img/gps.png" width="12px" > 湖北</a></span>
-                <span class="span2" style="width: 105px;"><a href="">你好, 请登录</a> <a class="a" href="">免...</a></span>
-                <span class="span2" style="width:69px"><a href="">我的订单</a></span>
-                <span class="span2" style="width:84px"><a href="">我的京东</a> ∨</span>
-                <span class="span2" style="width:69px"><a href="">京东会员</a></span>
-                <span class="span2" style="width:84px"><a class="a" href="">政企采购</a> ∨</span>
-                <span class="span2" style="width:84px">客户服务 ∨</span>
-                <span class="span2" style="width:84px">网站导航 ∨</span>
-                <span class="span2" style="width:81px">手机京东</span>
-                <span class="span2" style="width:81px"><a href="">网站无障碍</a></span>
+                <ul class="header-list">
+                    <li><a href=""><img src="img/gps.png" width="12px" > 湖北</a></li>
+                    <li><a href="">你好，请登录</a><a href="">免登录</a></li>
+                    <li><a href="">我的订单</a></li>
+                    <li><a href="">我的京东</a> ∨</li>
+                    <li><a href="">京东会员</a></li>
+                    <li><a href="">企业采购</a> ∨</li>
+                    <li><a href="">客户服务</a> ∨</li>
+                    <li><a href="">网站导航</a> ∨</li>
+                    <li><a href="">手机京东</a></li>
+                    <li><a href="">网站无障碍</a></li>
+                </ul>
+                
             </div>
         </header>
         <nav>
             <div class="nav">
-                <span ><textarea class="textarea" placeholder="笔记本"></textarea></span>
+               <ul class="nav_list">
+                   <li><input type="text" placeholder="笔记本电脑"/></li>
+                   <li><a href="">搜索</a></li>
+                   <li></li>
+               </ul>
             </div>
         </nav>
     </body>
