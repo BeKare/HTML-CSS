@@ -8,27 +8,95 @@
         <title>Document</title>
         <style>
             nav{
-                width:990px;
-                height:140px;
+                padding: 28px 316px;
+                
+            }
+            .nav{
                 font-weight: 100;
                 font-size: 12px;
-                margin: 28px 316px;
+                
+            }
+            .nav_list{
+                display: flex;
             }
             .nav input{
                 width: 430px;
                 height: 30px;
                 margin: -2px -2px 0 0;
                 border: 2px solid #e1251b;
+                outline: #e1251b;
                 
             }
             .nav_list li:nth-of-type(2){
                 margin-top: -2px;
-                padding: 8px 19px;
                 background-color: #e1251b;
-                border: 2px solid #e1251b;
             }
-            .nav_list li a{
+            .nav_list li button{
                 color: white;
+                background:#e1251b;
+                border: none;
+                width: 58px;
+                height: 32px;
+            }
+            .container_box{
+                display: flex;
+                background: white;
+                width: auto;
+                display: -webkit-box;
+                -webkit-box-pack: center;
+                height: 480px;
+            }
+            .container_left{
+                width: 190px;
+                height: 450px;
+                padding: 10px 0;
+                margin: 10px 0 0 0 ;
+                border: 1px solid #ccc;
+            }
+            .container_center{
+                margin:10px;
+                width: 590px;
+                height: 470px;
+                border: 1px solid #ccc;
+            }
+            .container_right{
+                width: 190px;
+                height: 480px;
+                
+            }
+            .container_left_list{
+                padding: 0;
+                margin: 0;
+            }
+            .container_left_list li{
+                font:14px/25px "@微软雅黑";
+                padding:0 0 0 18px;
+            }
+            .container_left_list a{
+                color:black;
+            }
+            .container_left_list a:hover{
+                color: red;
+            }
+            .container_left_list li:hover{
+                background: #ccc;
+            }
+            .news_user_plus{
+                margin-top:10px;
+                border: 1px solid #ccc;
+                height: 102px;
+                width: 190px;
+            }
+            .news_center{
+                width: 190px;
+                height: 130px;
+                border: 1px solid #ccc;
+            }
+            .news_bottom{
+                width: 190px;
+                padding-top:5px;
+                height: 225px;
+                border: 1px solid #ccc;
             }
         </style>
     </head>
@@ -54,10 +122,77 @@
             <div class="nav">
                <ul class="nav_list">
                    <li><input type="text" placeholder="笔记本电脑"/></li>
-                   <li><a href="">搜索</a></li>
+                   <li><button onclick="">搜索</button></li>
                    <li></li>
                </ul>
             </div>
         </nav>
+        <div class="container_box">
+            <div class="container_left">
+                <ul class="container_left_list">
+                    <li><a href="">家用电器</a></li>
+                    <li>
+                        <a href="">手机</a>/<a href="">运营商</a>/<a href="">数码</a>
+                    </li>
+                    <li>
+                        <a href="">电脑</a>/<a href="">办公</a>
+                    </li>
+                    <li>
+                        <a href="">家居</a>/<a href="">家具</a>/<a href="">家装</a>/<a href="">厨具</a>
+                    </li>
+                    <li>
+                        <a href="">男装</a>/<a href="">女装</a>/<a href="">童装</a>/<a href="">内衣</a>
+                    </li>
+                    <li>
+                        <a href="">美妆</a>/<a href="">个护清洁</a>/<a href="">宠物</a>
+                    </li>
+                    <li>
+                        <a href="">女鞋</a>/<a href="">箱包</a>/<a href="">钟表</a>/<a href="">珠宝</a>
+                    </li>
+                    <li>
+                        <a href="">男鞋</a>/<a href="">运动</a>/<a href="">户外</a>
+                    </li>
+                    <li>
+                        <a href="">房产</a>/<a href="">汽车</a>/<a href="">汽车用品</a>
+                    </li>
+                    <li>
+                        <a href="">母婴</a>/<a href="">玩具乐器</a>
+                    </li>
+                    <li>
+                        <a href="">食品</a>/<a href="">酒类</a>/<a href="">生鲜</a>/<a href="">特产</a>
+                    </li>
+                    <li>
+                        <a href="">艺术</a>/<a href="">礼品鲜花</a>/<a href="">农资绿植</a>
+
+                    </li>
+                    <li>
+                        <a href="">医药保健</a>/<a href="">计生情趣</a>
+
+                    </li>
+                    <li>
+                        <a href="">图文</a>/<a href="">文娱</a>/<a href="">教育</a>/<a href="">电子书</a>
+
+                    </li>
+                    <li>
+                        <a href="">机票</a>/<a href="">酒店</a>/<a href="">旅游</a>/<a href="">生活</a>
+                    </li>
+                    <li>
+                        <a href="">理财</a>/<a href="">众筹</a>/<a href="">白条</a>/<a href="">保险</a>
+                    </li>
+                    <li>
+                        <a href="">安装</a>/<a href="">维修</a>/<a href="">清洗</a>/<a href="">二手</a>
+                    </li>
+                    <li>
+                        <a href="">工业品</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container_center"></div>
+            <div class="container_right">
+                <div class="news_user_plus"></div>
+                <div class="news_center"></div>
+                <div class="news_bottom"></div>
+            </div>
+        </div>
     </body>
 </html>
