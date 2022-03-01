@@ -9,12 +9,26 @@
         <style>
             nav{
                 height: 140px;
+                padding: 0px;
+                border: 1px solid #ccc;
             }
             .nav{
                 font-weight: 100;
                 font-size: 12px;
-                
-                padding: 28px 316px;
+                margin: 28px auto;
+                display: flex;
+                justify-content: center;
+            }
+            .nav_img{
+                width:190px;
+                height: 120px;
+                border:1px solid #ccc;
+                margin-right: 20px;
+                margin-top:-14px;
+            }
+            .nav_right{
+                width: 780px;
+                border: 1px solid #ccc;
             }
             .nav_list{
                 display: flex;
@@ -40,11 +54,11 @@
             }
             .container_box{
                 display: flex;
+                justify-content: center;
                 background: white;
                 width: auto;
-                display: -webkit-box;
-                -webkit-box-pack: center;
                 height: 480px;
+                margin-bottom: 30px;
             }
             .container_left{
                 width: 190px;
@@ -98,6 +112,152 @@
                 height: 225px;
                 border: 1px solid #ccc;
             }
+            .seckill{
+                display: flex;
+                height: 260px;
+                width: auto;
+                justify-content: center;
+            }
+            .seckill_left{
+                height: 260px;
+                border: 1px solid #ccc;
+                width: 190px;
+            }
+            .seckill_center{
+                width: 610px;
+                height: 260px;
+                border: 1px solid #ccc;
+            }
+            .seckill_list{
+                list-style: none;
+                display: flex;
+            }
+            .seckill_right{
+                width: 170px;
+                height: 240px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+            .special_offer{
+                display: flex;
+                justify-content: center;
+                margin-top:26px;
+            }
+            .so_left{
+                width: 490px;
+                height: 330px;
+                border:1px solid #ccc;
+                margin-right: 5px;
+            }
+            .so_right{
+                width: 490px;
+                height: 330px;
+                border:1px solid #ccc;
+                margin-left: 5px;
+            }
+            .find_goods{
+                display: flex;
+                justify-content: center;
+                margin-top:26px;
+            }
+            .fg_left{
+                width: 190px;
+                height: 260px;
+                border:1px solid #ccc;
+                margin-right: 5px;
+            }
+            .fg_right{
+                width: 790px;
+                height: 260px;
+                border:1px solid #ccc;
+                margin-left: 5px;
+            }
+            .j_core2{
+                display: flex;
+                justify-content: center;
+                margin-top:26px;
+            }
+            .news_top{
+                width: 240px;
+                height: 305px;
+                border:1px solid #ccc;
+                margin-right:  10px;
+            }
+            .news_top:nth-of-type(4){
+                margin-right: 0px;
+            }
+            .channel{
+                text-align: center;
+                width: 100%;
+                margin: 20px auto;
+            }
+            .square{
+                display: flex;
+                width: 990px;
+                margin: 0px auto;
+                height: 790px;
+                border:1px solid #ccc;
+            }
+            .recommend{
+                width: 990px;
+                height: 9800px;
+                margin:20px auto;
+                border:1px solid #ccc;
+            }
+            .re_top{
+                width: 100%;
+                margin: 0 auto 20px;
+                text-align:center;
+            }
+            .re_nav{
+                width: 990px;
+                height: 60px;
+                border:1px solid #ccc;
+            }
+            .re_nav_list{
+                display: flex;
+            }
+            .re_nav_list li{
+                margin: 0px 35px;
+                text-align: center;
+                display: inline;
+            }
+            .re_nav_list a:nth-of-type(1){
+                color: black;
+                display: block;
+                font-size: 15px;
+                margin-top: -10px;
+            }
+            .re_nav_list span{
+                display: block;
+                margin-top: -15px;
+                color: #999;
+                font-size: 14px;
+            }
+            .re_nav_list span:hover{
+                color:red;
+            }
+            .re_nav_list li:nth-of-type(1) a:nth-of-type(1){
+                width: 80px;
+                height: 27px;
+                color: white;
+                background: red;
+                border-radius: 45rem;
+            }
+            .re_nav_list li:nth-of-type(1) span:nth-of-type(2)
+            {
+                color: red;
+            }
+            .re_nav_list li:nth-of-type(1){
+                margin-left: 80px;
+               
+            }
+            .re_nav_list li:nth-of-type(2n){
+                width: 1px;
+                height: 40px;
+                margin: 10px 0;
+                background-color: #ccc;
+            }
         </style>
     </head>
     <body>
@@ -120,11 +280,14 @@
         </header>
         <nav>
             <div class="nav">
-               <ul class="nav_list">
-                   <li><input type="text" placeholder="笔记本电脑"/></li>
-                   <li><button onclick="">搜索</button></li>
-                   <li></li>
-               </ul>
+                <div class="nav_img">图片</div>
+                <div class="nav_right">
+                    <ul class="nav_list">
+                        <li><input type="text" placeholder="笔记本电脑"/></li>
+                        <li><button onclick="">搜索</button></li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div class="container_box">
@@ -194,5 +357,53 @@
                 <div class="news_bottom"></div>
             </div>
         </div>
+        <div class="seckill">
+            <div class="seckill_left"></div>
+            <div class="seckill_center">
+                <ul class="seckill_list">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="seckill_right"></div>
+        </div>
+        <div class="special_offer">
+            <div class="so_left"></div>
+            <div class="so_right"></div>
+        </div>
+        <div class="find_goods">
+            <div class="fg_left"></div>
+            <div class="fg_right"></div>
+        </div>
+        <div class="j_core2">
+            <div class="news_top"></div>
+            <div class="news_top"></div>
+            <div class="news_top"></div>
+            <div class="news_top"></div>
+        </div>
+        <div class="channel">
+            <h2>频道广场</h2>
+        </div>
+        <div class="square"></div>
+        <div class="recommend">
+            <div class="re_top"><h2>为你推荐</h2></div>
+            <div class="re_nav">
+                <ul class="re_nav_list">
+                    <li><a href=""><h3>精选</h3><span>猜你喜欢</span></a></li>
+                    <li></li>
+                    <li><a href=""><h3>智能先锋</h3><span>大电器城</span></a></li>
+                    <li></li>
+                    <li><a href=""><h3>居家优品</h3><span>品质生活</span></a></li>
+                    <li></li>
+                    <li><a href=""><h3>超市百货</h3><span>百货生鲜</span></a></li>
+                    <li></li>
+                    <li><a href=""><h3>时尚达人</h3><span>美妆穿搭</span></a></li>
+                    <li></li>
+                    <li><a href=""><h3>进口好物</h3><span>京东国际</span></a></li>
+                </ul>
+            </div>
+        </div>
+        
     </body>
 </html>
