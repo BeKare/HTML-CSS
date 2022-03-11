@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,ul{
+            margin:0px;
+            padding:0px;
+        }
+        ul li{
+            list-style: none;
+        }
+        li:before{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #ccc;
+            border-radius: 45rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // var a=b=c="hello",d=112,f;
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // console.log(d);
+        // console.log(f);
+        var cldli=document.getElementById("list").getElementsByTagName('li');
+        for(i=0;i<cldli.length;i++){
+            cldli[i].onclick=function(){
+                for(var j = 0;j<cldli.length;j++){
+                    cldli[j].style.backgroundColor="white";
+                }
+                this.style.backgroundColor="red";
+            }
+        }
+        console.log(cldli.length);
+    </script>
+</body>
+</html>
