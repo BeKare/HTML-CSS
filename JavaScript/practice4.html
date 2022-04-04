@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #index{
+            width: 100px;
+            height: 100px;
+            border:2px solid #ccc;
+        }
+        #updiv{
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            top:50%;
+            display: none;
+            text-align: center;
+            overflow: hidden;
+        }
+        ul{
+            /* display: none; */
+            list-style: none;
+        }
+        li{
+            display:flex;
+        }
+        li span{
+            display:inline-block;
+            padding: 10px;
+            text-align: center;
+        }
+        li span:nth-child(1){
+            width: 120px;
+        }
+        li span:not(:nth-child(1)){
+            border: 1px solid black;
+            width: 50px;
+        }
+        li span:not(:nth-child(1)):hover{
+            cursor: pointer;
+        }
+        #red{
+            background:red;
+            color: white;
+        }
+        #yellow{
+            background: yellow;
+        }
+        #blue{
+            background: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>请为下面的div设置样式:</span>
+        <button id="update">点击设置</button>
+        <div id="index"></div>
+    </div>
+    <div id="updiv">
+        <ul id="list">
+            <li>
+                <span>请选择背景色:</span>
+                <span id="red">红</span>
+                <span id="yellow">黄</span>
+                <span id="blue">蓝</span>
+            </li>
+            <li>
+                <span>请选择宽度:</span>
+                <span id="w200">200px</span>
+                <span id="w300">300px</span>
+                <span id="w400">400px</span>
+            </li>
+            <li>
+                <span>请选择高度:</span>
+                <span id="h200">200px</span>
+                <span id="h300">300px</span>
+                <span id="h400">400px</span>
+            </li>
+        </ul>
+        <button id="reset" type="reset">恢复</button>
+        <button id="confirm">确认</button>
+    </div>
+    <script>
+        var red=document.getElementById('red');
+        var yellow=document.getElementById('yellow');
+        var blue=document.getElementById('blue');
+        var w200=document.getElementById('w200');
+        var w300=document.getElementById('w300');
+        var w400=document.getElementById('w400');
+        var h200=document.getElementById('h200');
+        var h300=document.getElementById('h300');
+        var h400=document.getElementById('h400');
+        var view=document.getElementById('index');
+        var upt=document.getElementById('update');
+        var updiv=document.getElementById('updiv');
+        var reset=document.getElementById('reset');
+        var confirm1=document.getElementById('confirm');
+        // console.log(confirm)
+        confirm1.onclick=function(){
+            updiv.style.display='none'
+        }
+        reset.onclick=function(){
+            view.style.cssText='height=100px;width=100px;background:white'
+        }
+        upt.onclick=function(){
+            updiv.style.display='block'
+        }
+        red.onclick=function(){
+            view.style.background='red'
+        }
+        yellow.onclick=function(){
+            view.style.background='yellow'
+        }
+        blue.onclick=function(){
+            view.style.background='blue'
+        }
+        w200.onclick=function(){
+            view.style.width='200px'
+        }
+        w300.onclick=function(){
+            view.style.width='300px'
+        }
+        w400.onclick=function(){
+            view.style.width='400px'
+        }
+        h200.onclick=function(){
+            view.style.height='200px'
+        }
+        h300.onclick=function(){
+            view.style.height='300px'
+        }
+        h400.onclick=function(){
+            view.style.height='400px'
+        }
+    </script>
+</body>
+</html>
