@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input id="ipt1">
+    +<input id="ipt2">
+    <button id="btn">=</button>
+    <span id="answer"></span>
+    <script>
+        var ipt1=document.querySelector('#ipt1')
+        var ipt2=document.querySelector('#ipt2')
+        var btn=document.querySelector('#btn')
+        var answer=document.querySelector('#answer')
+        btn.onclick=function(){
+            console.log(typeof parseInt(ipt1.value))
+            answer.innerHTML=parseInt(ipt1.value)+parseInt(ipt2.value)
+            
+        }
+    </script>
+</body>
+</html>

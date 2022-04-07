@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            height: 200px;
+            width:200px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        li{
+            border: 1px solid blue;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="list"></ul>
+        <textarea id="content"></textarea>
+        <button id="submit">发送</button>
+    </div>
+    <script>
+        var list=document.querySelector('#list')
+        var submit=document.querySelector('#submit')
+        var content=document.querySelector('#content')
+        submit.onclick=function(){
+            if(content.value!=""){
+                list.innerHTML+="<li>"+content.value+"</li>"
+            }else{
+                alert("请输入你想发送的内容")
+            }
+        }
+    </script>
+</body>
+</html>
