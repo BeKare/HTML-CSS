@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div{
+           display: flex;
+           justify-content: center; 
+           align-items: center;
+           margin-top: 100px;
+        }
+        img{
+            height: 200px;
+            width: 350px;
+        }
+        span{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="list">
+        <button id="last"><</button>
+        <img id="image" src="./img/1.jpg">
+        <button id="next">></button>
+        
+    </div>
+    <span id="span">这是第1张图片</span>
+    <script>
+        var last=document.querySelector("#last")
+        var next=document.querySelector("#next")
+        var image=document.querySelector("#image")
+        var span=document.querySelector("#span")
+        var i=1
+        next.onclick=function(){
+            i+=1
+            span.innerHTML="这是第"+i+"张图片"
+            image.src='./img/'+i+'.jpg'
+                if(i>=4){
+                    i=0
+                }
+        }
+        last.onclick=function(){
+            i-=1
+            if(i<=0){
+                i=4
+            }
+            image.src='./img/'+i+'.jpg'
+            span.innerHTML="这是第"+i+"张图片"
+        }
+    </script>
+</body>
+</html>
