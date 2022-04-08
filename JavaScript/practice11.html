@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin:0;
+            display: flex;
+            justify-content: center;
+        }
+        div{
+            margin: 100px;
+            display: flex;
+        }
+        a{
+            display: inline-block;
+            text-align: center;
+            width: 80px;
+            height: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        .checked{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="hobby">
+        <a>吃饭</a>
+        <a>睡觉</a>
+        <a>打豆豆</a>
+    </div>
+    <div id="sex">
+        <a>男</a>
+        <a>女</a>
+        <a>保密</a>
+    </div>
+    <script>
+        var a1=document.querySelectorAll('#hobby a')
+        var a2=document.querySelectorAll('#sex a')
+        // console.log(a1)
+        for(var i=0;i<a1.length;i++){
+            a1[i].abc=true
+            // console.log(a1[i])
+            a1[i].onclick=function(){
+                if(this.abc){
+                    this.className='checked'
+                }else{
+                    this.className=''
+                }
+                this.abc=!this.abc
+            }
+        }
+
+        for(var i=0;i<a2.length;i++){
+            a2[i].onclick=function(){
+                for(var j=0;j<a2.length;j++){
+                    a2[j].className=''
+                }
+                this.className='checked'
+            }
+            
+        }
+    </script>
+</body>
+</html>
