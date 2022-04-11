@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #navs{
+            display: flex;
+            justify-content: center;
+        }
+        a{
+            display: inline-block;
+            padding: 30px;
+            border: 1px solid #ccc;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            
+        }
+        
+        .content div{
+            position:absolute;
+            left:370px;
+            display: none;
+        }
+        .acolor{
+            background: blue;
+            color: white;
+        }
+        a:hover{
+           cursor: pointer; 
+        }
+        .content div.draw{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <nav id="navs">
+            <a class="acolor">我的行程</a>
+            <a>消息中心</a>
+            <a>角色管理</a>
+            <a>定时任务补偿</a>
+        </nav>
+        <div id="content" class="content">
+            <div class="draw" >我的行程</div>
+            <div>消息中心</div>
+            <div>角色管理</div>
+            <div>定时任务补偿</div>
+        </div>    
+    </div>
+    <script>
+        var navs=document.querySelectorAll('#navs a')
+        var content=document.querySelectorAll('#content div')
+        for(var i=0;i<navs.length;i++){
+            navs[i].index=i
+            navs[i].onmouseover=function(){
+                for(var j=0;j<navs.length;j++){
+                    navs[j].className=''
+                    content[j].className=''
+                }
+                this.className='acolor'
+                content[this.index].className='draw'
+            }
+        }
+
+    </script>
+</body>
+</html>

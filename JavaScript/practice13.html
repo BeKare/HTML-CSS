@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+        }
+        
+        span{
+            position: absolute;
+            display: inline-block;
+            width:60px;
+            height:60px;
+        }   
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script>
+        var div=document.querySelector('#box')
+        var img=""
+        var str=""
+        for(var i=0;i<=20;i++){
+            for(var j=0;j<=15;j++){
+                console.log(i)
+               str+=`<span class='span' style="top:${j*64}px;left:${i*64}px;background:green; background-position:${-i*64}px ${-64*j}px;"></span>`
+               
+            }
+        }
+        div.innerHTML+=str
+        var span=document.querySelectorAll('#box .span')
+        // console.log(span)
+        for(var i=0;i<span.length;i++)
+            span[i].onmouseover=function(){
+                this.style.backgroundImage="url(img/11.jpg)"
+            }
+    </script>
+</body>
+</html>

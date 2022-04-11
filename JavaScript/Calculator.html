@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width: 30%;
+            margin:auto;
+            height: 300px;
+            border:1px solid #ccc;
+        }
+        ul{
+            list-style: none;
+
+        }
+
+         li{
+            width: 77px;
+            margin: 10px;
+            line-height: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            
+        }
+        input{
+            outline: none;
+            padding: 10px;
+            margin: 20px;
+        }
+        #include{
+            width: 379px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <input type="text" id="input" value="111">
+            结果为:<span  id="result"></span>
+        </div>
+        <div id="include">
+            <ul id="num1">
+                <li>清除</li>
+                <li>7</li>
+                <li>4</li>
+                <li>1</li>
+                <li></li>
+            </ul>
+            <ul id="num2">
+                <li>删除</li>
+                <li>8</li>
+                <li>5</li>
+                <li>2</li>
+                <li>0</li>
+            </ul>
+            <ul id="num3">
+                <li></li>
+                <li>9</li>
+                <li>6</li>
+                <li>3</li>
+                <li>.</li>
+            </ul>
+            <ul id="list">
+                <li>+</li>
+                <li>-</li>
+                <li>*</li>
+                <li>/</li>
+                <li>=</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var num1=document.querySelectorAll('#num1 li')
+        var num3=document.querySelectorAll('#num3 li')
+        var num2=document.querySelectorAll('#num2 li')
+        var list=document.querySelectorAll('#list li')
+        var input=document.querySelector('#input')
+        var result=document.querySelector('#result')
+        var num=input.value.length
+        for(var i=1;i<num1.length;i++){
+            num1[i].onclick=fill;
+            num2[i].onclick=fill;
+            num3[i].onclick=fill;
+            
+        }
+        for(var i=0;i<list.length;i++){
+            if(input.value!=''){
+                list[i].onclick=function(){
+                    var count=input.value
+                    var count1=count.length+1
+                    console.log(count1)
+                    if(this.innerHTML!='='){
+                       input.value+=this.innerHTML
+                    }else if(count1!=''){
+                        result.innerHTML=parseInt(count)+count1
+                    }
+
+                }
+            
+            }
+        }
+        num1[0].onclick=function(){
+            input.value=''
+        }
+        num2[0].onclick=function(){
+            console.log(num)
+            num-=1
+        }
+        function fill(){
+            input.value+=this.innerHTML
+        }
+    </script>
+    </body>
+</html>
