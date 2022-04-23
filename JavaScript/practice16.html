@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            text-align: center;
+        }
+        .content{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>随机生成0~100的其中一个数，共有十次机会，每次猜错都会提醒偏大还是偏小</div>
+        <input type="text" class="content" id="txt">
+        <button id="btn">确定</button>
+    </div>
+    <script>
+        function GetRandomNum(Min,Max)
+            {
+            var Range = Max - Min;
+            var Rand = Math.random();
+            return(Min + Math.round(Rand * Range));
+            }
+        var i=GetRandomNum(0,100)
+        // console.log(i)
+        var txt=document.querySelector('#txt')
+        var btn=document.querySelector('#btn')
+        var count=0
+        btn.onclick=function(){
+            if(count<=10){
+                if(txt.value!=Number&&txt.value!=''){
+                    if(txt.value==i){
+                        alert('恭喜你猜对了')
+                    }else if(txt.value>i){
+                        alert('答案没有这么大')
+                        txt.value=''
+                        count++
+                    }else if(txt.value<i){
+                        txt.value=''
+                        alert('猜的太小了')
+                        count++
+                    }
+                }else{
+                    alert('请输入数字')
+                }
+            }else{
+                alert('十次机会都用完了,挑战失败!')
+                btn.disabled='true'
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .txt{
+            display: inline-block;
+            outline: none;
+            margin: 10px;
+        }
+        .box{
+            text-align: center;
+        }
+        .sign_box{
+            display: flex;
+            justify-content:center
+        }
+        .sign_btn,.register_btn{
+            margin: 10px;
+            background: blue;
+            color:white;
+        }
+        .modal {
+            display: none; /* 默认隐藏 */
+            position: fixed; /* 固定定位 */
+            z-index: 1; /* 设置在顶层 */
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%; 
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+        <div class="box">
+            <div><label>账号:</label><input type="text" class="txt" id="username"></div>
+            <div><label>密码:</label><input id="pwd" class="txt" type="password"></div>
+            <div class="sign_box">
+                <button id="sign" class="sign_btn">登录</button>
+                <button id="register" class="register_btn">注册</button>
+            </div>
+        </div> 
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <!-- <span class="close">&times;</span> -->
+                  <div><label>账号:</label><input type="text" class="txt" id="rename"></div>
+                  <div><label>密码:</label><input id="repwd" class="txt"></div>
+                  <button id="cancel">取消</button>
+                  <button id="confirm">确认注册</button>
+                </div>
+              </div>
+   
+    <script>
+        var username=document.querySelector('#username')
+        var rename=document.querySelector('#rename')
+        var repwd=document.querySelector('#repwd')
+        var sign=document.querySelector('#sign')
+        var register=document.querySelector('#register')
+        var pwd=document.querySelector('#pwd')
+        var modal=document.querySelector('#myModal')
+        var cancel=document.querySelector('#cancel')
+        var confirm1=document.querySelector('#confirm')
+        var newuser
+        var newpwd
+       
+       register.onclick=function(){
+            modal.style.display='block'
+       }
+       cancel.onclick=function(){
+           modal.style.display='none'
+       }
+       confirm1.onclick=function(){
+           if(rename.value!=''&&repwd.value!=''){
+            alert("注册成功")
+            newuser==rename.value
+            newpwd==repwd.value
+           modal.style.display='none'
+           }else{
+               alert("请输入需要注册的账号或密码")
+           }
+       }
+       sign.onclick=function(){
+        // console.log(username.value)
+        if(username.value=='admin'&&pwd.value=='123456'){
+            alert('登录成功')
+            username.value=''
+            pwd.value=''
+        }else if(username.value==newuser&&pwd.value==newpwd){
+            alert("登录成功")
+        }else{
+            console.log(newuser,newpwd)
+            alert("密码错误")
+        }
+       }
+        
+    </script>
+</body>
+</html>
