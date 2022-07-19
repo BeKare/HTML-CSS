@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content{
+            width: 200px;
+            height: 300px;
+            margin-top: 10px;
+            border: 2px solid red ;
+            display: none;
+        }
+        .active{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input class="active" type="button" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <div class="content" style="display: block;">111</div>
+        <div class="content">222</div>
+        <div class="content">333</div>
+    </div>
+    <script>
+        // var Ipt=document.querySelectorAll('input');
+        // var oDiv=document.querySelectorAll('.content');
+
+        // for(var i=0;i<Ipt.length;i++){
+        //     Ipt[i].index=i
+        //     Ipt[i].onclick=function(){
+        //         for(var i=0;i<Ipt.length;i++){
+        //             Ipt[i].className=''
+        //             oDiv[i].style.display='none'
+        //         }
+        //         oDiv[this.index].style.display='block'
+        //         this.className='active';
+        //     }
+        // }
+        window.onload=function(){
+            var obj1=new Obj();
+            obj1.init();
+        }
+
+        function Obj(){
+            this.Ipt=document.querySelectorAll('input')
+            this.oDiv=document.querySelectorAll('.content')
+        }
+        Obj.prototype.init=function(){
+            for(var i=0;i<this.Ipt.length;i++){
+                var This=this
+                this.Ipt[i].index=i
+                this.Ipt[i].onclick=function(){
+                    This.change(this)
+                }
+            }
+        }
+        Obj.prototype.change=function(obj){
+            for(var i=0;i<this.Ipt.length;i++){
+                    this.Ipt[i].className=''
+                    this.oDiv[i].style.display='none'
+                }
+                this.oDiv[obj.index].style.display='block'
+                obj.className='active';
+        }
+
+    </script>
+</body>
+</html>
