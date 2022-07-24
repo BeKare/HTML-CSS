@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            margin:0 50px;
+            width: 100px;
+            height: 30px;
+        }
+        .sty{
+            position:absolute;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="button" value="左">
+        <input type="button" value="中">
+        <input type="button" value="右">
+    </div>
+    <script>
+        var Inps=document.querySelectorAll('input');
+        var div1=null;
+
+        Inps[0].onclick=function(){
+            var obj=new Show();
+            obj.init({
+                w:200,
+                h:200,
+                dir:'left'
+            });
+        };
+        Inps[1].onclick=function(){
+            var obj=new Show();
+            obj.init({
+               
+            });
+        };
+        Inps[2].onclick=function(){
+            var obj=new Show();
+            obj.init({
+                w:300,
+                h:300,
+                dir:'right'
+            });
+        };
+       
+
+        function Show(){
+            this.settings={
+                w:100,
+                h:100,
+                dir:'center'
+            };
+        };
+        Show.prototype.init=function(opt){
+            exit(this.settings,opt)
+            this.create();
+        };
+        Show.prototype.create=function(){
+            this.div1=document.createElement('div');
+            this.div1.className='sty';
+            document.body.appendChild(this.div1);
+            this.change();
+        };
+        Show.prototype.change=function(){        
+            this.div1.style.width=this.settings.w+'px';
+            this.div1.style.height=this.settings.h+'px';
+
+            if(this.settings.dir=='center'){
+                this.div1.style.left=(viewwidth()-this.div1.offsetWidth)/2+'px'
+                this.div1.style.top=(viewheight()-this.div1.offsetHeight)/2+'px'
+            }
+            else if(this.settings.dir=='left'){
+                this.div1.style.left=0+'px'
+                this.div1.style.top=(viewheight()-this.div1.offsetHeight)/2+'px'
+            }
+            else if(this.settings.dir=='right'){
+                this.div1.style.left=viewwidth()-this.div1.offsetWidth+'px'
+                this.div1.style.top=(viewheight()-this.div1.offsetHeight)/2+'px'
+            }
+        };
+        function exit(obj1,obj2){
+            for(var attr in obj2){
+                obj1[attr]=obj2[attr];
+            };
+        };
+        function viewheight(){
+            return document.documentElement.clientHeight
+        }
+        function viewwidth(){
+            return document.documentElement.clientWidth
+        }
+    </script>
+</body>
+</html>
